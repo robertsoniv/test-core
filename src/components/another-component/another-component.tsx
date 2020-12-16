@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'another-component',
@@ -9,7 +9,7 @@ export class AnotherComponent {
 
   render() {
     return (
-      <div>Another Component Example</div>
+      <div>Another Component Example!</div>
     );
   }
 
