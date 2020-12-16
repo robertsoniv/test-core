@@ -1,6 +1,6 @@
 name: Continuous Integration
 on:
-  pull-request:
+  pull_request:
     branches:
       - '+([0-9])?(.{+([0-9]),x}).x'
       - 'master'
