@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { JSX } from "@stencil/core";
 export namespace Components {
     interface AnotherComponent {
     }
@@ -21,7 +22,10 @@ export namespace Components {
           * The middle name
          */
         "middle": string;
-        "renderTitle": (text:string) => Element;
+        /**
+          * Replace the rendered title with your own JSX Element
+         */
+        "renderTitle": (text:string) => JSX.Element;
     }
 }
 declare global {
@@ -58,7 +62,10 @@ declare namespace LocalJSX {
           * The middle name
          */
         "middle"?: string;
-        "renderTitle"?: (text:string) => Element;
+        /**
+          * Replace the rendered title with your own JSX Element
+         */
+        "renderTitle"?: (text:string) => JSX.Element;
     }
     interface IntrinsicElements {
         "another-component": AnotherComponent;
