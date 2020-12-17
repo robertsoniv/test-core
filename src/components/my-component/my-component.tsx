@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, JSX } from '@stencil/core';
 import { format } from '../../utils/utils';
 
 @Component({
@@ -22,7 +22,10 @@ export class MyComponent {
    */
   @Prop() last: string;
 
-  @Prop() renderTitle: (text:string) => Element;
+  /**
+   * Replace the rendered title with your own JSX Element 
+   */
+  @Prop() renderTitle: (text:string) => JSX.Element;
 
   private getText(): string {
     return format(this.first, this.middle, this.last);
@@ -33,27 +36,27 @@ export class MyComponent {
       {this.renderTitle ? (this.renderTitle(this.getText())) : (<h1>My name is {this.getText()}!</h1>)}
       {this.getText() ? (
         <table>
-        <tbody>
-          {this.first && (
+          <tbody>
+            {this.first && (
+              <tr>
+                <th>First Name</th>
+                <td>{this.first || 'N/A'}</td>
+              </tr>
+            )}
+            {this.middle && (
             <tr>
-              <th>First Name</th>
-              <td>{this.first || 'N/A'}</td>
+              <th>Middle Name</th>
+              <td>{this.middle || 'N/A'}</td>
             </tr>
-          )}
-          {this.middle && (
-          <tr>
-            <th>Middle Name</th>
-            <td>{this.middle || 'N/A'}</td>
-          </tr>
-          )}
-          {this.last && (
-          <tr>
-            <th>Last Name</th>
-            <td>{this.last || 'N/A'}</td>
-          </tr>
-          )}
-        </tbody>
-      </table>
+            )}
+            {this.last && (
+            <tr>
+              <th>Last Name</th>
+              <td>{this.last || 'N/A'}</td>
+            </tr>
+            )}
+          </tbody>
+        </table>
       ) : null}      
     </div>;
   }
