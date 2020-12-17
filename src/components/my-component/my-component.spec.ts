@@ -11,7 +11,7 @@ describe('my-component', () => {
       <my-component>
         <mock:shadow-root>
           <div>
-            My name is !
+            <h1>My name is !</h1>
           </div>
         </mock:shadow-root>
       </my-component>
@@ -27,7 +27,19 @@ describe('my-component', () => {
       <my-component first="Robert" last="Watt">
         <mock:shadow-root>
           <div>
-            My name is Robert Watt!
+            <h1>My name is Robert Watt!</h1>
+            <table>
+              <tbody>
+                <tr>
+                  <th>First Name</td>
+                  <td>Robert</td>
+                </tr>
+                <tr>
+                  <th>Last Name</td>
+                  <td>Watt</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </mock:shadow-root>
       </my-component>

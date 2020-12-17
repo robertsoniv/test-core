@@ -27,6 +27,32 @@ export class MyComponent {
   }
 
   render() {
-    return <div>My name is {this.getText()}!</div>;
+    return <div>
+      <h1>My name is {this.getText()}!</h1>
+      {this.getText() ? (
+        <table>
+        <tbody>
+          {this.first && (
+            <tr>
+              <th>First Name</th>
+              <td>{this.first || 'N/A'}</td>
+            </tr>
+          )}
+          {this.middle && (
+          <tr>
+            <th>Middle Name</th>
+            <td>{this.middle || 'N/A'}</td>
+          </tr>
+          )}
+          {this.last && (
+          <tr>
+            <th>Last Name</th>
+            <td>{this.last || 'N/A'}</td>
+          </tr>
+          )}
+        </tbody>
+      </table>
+      ) : null}      
+    </div>;
   }
 }
