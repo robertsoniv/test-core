@@ -22,6 +22,7 @@ export namespace Components {
           * The middle name
          */
         "middle": string;
+        "ref": any;
         /**
           * Replace the rendered title with your own JSX Element
          */
@@ -62,6 +63,7 @@ declare namespace LocalJSX {
           * The middle name
          */
         "middle"?: string;
+        "ref"?: any;
         /**
           * Replace the rendered title with your own JSX Element
          */
