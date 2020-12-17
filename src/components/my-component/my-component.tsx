@@ -27,6 +27,8 @@ export class MyComponent {
    */
   @Prop() renderTitle: (text:string) => JSX.Element;
 
+  @Prop() ref: any;
+
   private getText(): string {
     return format(this.first, this.middle, this.last);
   }
