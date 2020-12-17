@@ -21,6 +21,7 @@ export namespace Components {
           * The middle name
          */
         "middle": string;
+        "renderTitle": (text:string) => Element;
     }
 }
 declare global {
@@ -57,6 +58,7 @@ declare namespace LocalJSX {
           * The middle name
          */
         "middle"?: string;
+        "renderTitle"?: (text:string) => Element;
     }
     interface IntrinsicElements {
         "another-component": AnotherComponent;

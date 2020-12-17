@@ -22,13 +22,15 @@ export class MyComponent {
    */
   @Prop() last: string;
 
+  @Prop() renderTitle: (text:string) => Element;
+
   private getText(): string {
     return format(this.first, this.middle, this.last);
   }
 
   render() {
     return <div>
-      <h1>My name is {this.getText()}!</h1>
+      {this.renderTitle ? (this.renderTitle(this.getText())) : (<h1>My name is {this.getText()}!</h1>)}
       {this.getText() ? (
         <table>
         <tbody>
